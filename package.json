@@ -1,0 +1,19 @@
+{
+  "name": "smartAppTravel",
+  "description": "Your PWA app",
+  "version": "1.0.0",
+  "author": "",
+  "dependencies": {
+    "express": "^4.13.4" ,
+    "body-parser": "^1.15.0",
+    "node-gcm": "^0.14.0"
+  },
+  "engines": {
+    "node": "4.1.1"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
