@@ -1,12 +1,17 @@
-var CACHE_NAME = 'axa-travel-v0.3';
+var CACHE_NAME = 'axa-travel-v0.4';
 var CACHE_VERSION = 1;
 
 var filesToCache = [
   '/',
-  '/index.html',
+  '/index.ejs',
   '/css/styles.css',
   '/js/app.js',
-  '/images/touch/chrome-touch-icon-192x192.png'
+  '/views/index.ejs',
+  '/views/payment-status.ejs',
+  '/images/icons/icon-48.png',
+  '/images/icons/icon-96.png',
+  '/images/icons/icon-192.png',
+  '/images/icons/icon-512.png'
 ];
 
 self.oninstall = function(event) {
@@ -39,7 +44,7 @@ self.onfetch = function(event) {
   event.respondWith(
     caches.match(request).then(function(response) {
       if (response) {
-        return response;
+         return response;
       }
 
       return fetch(request).then(function(response) {
@@ -71,7 +76,6 @@ function sendMessage(message) {
     })
   });
 }
-
 
 /*
   PUSH EVENT:
