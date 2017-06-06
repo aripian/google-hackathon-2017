@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>smartAppTravel</title>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=description content="A progressive webapp">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="canonical" href="https://digital.axa.com.my/travel-insurance-malaysia" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="PWA">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+    <meta name="theme-color" content="#2F3BA2">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+      /*<% include ../public/stylesheets/style.css %>*/
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <p class="custom-button">Enable Push Notifications:
+        <input id="turn-on-notification" type="checkbox" hidden="hidden" class="custom-input" data-checked="">
+        <label for="turn-on-notification" class="custom-checkbox"></label>
+      </p>
+      <button id="send-push" class="no-display">Send Push Notification</button>
+
+      <div class="quotation__container">
+        <div class="tag-line">Tag line Here</div>
+        <hr>
+        <div class="quotation-form">
+          <form action="">
+            <div>
+              <label>Departure Date</label>
+              <input type="date" name="departure-date" required>
+            </div>
+            <div>
+              <label>Return Date</label>
+              <input type="date" name="return-date" required>
+            </div>
+            <div>
+              <label>Area of Destination</label>
+              <select name="area" id="" required>
+                <option value="A1">Area 1</option>
+                <option value="A2">Area 2</option>
+                <option value="A3">Area 3</option>
+              </select>
+            </div>
+            <hr />
+            <button type="button">GET QUOTE</button>
+          </form>
+        </div>
+      </div>
+      <div class="plan-container">
+        
+      </div>
+
+
+
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="/js/push.js"></script>
+  <script src="/js/app.js"></script>
+</html>
