@@ -2,7 +2,7 @@
 const btn = document.getElementById('turn-on-notification');
 
 //Tokens
-const apiKey = 'AIzaSyCjrU5SqotSg2ybDLK_7rMMt9Rv0dMusvY'; //API key
+const apiKey = 'AIzaSyAKlZYO0XKTsDHSUtK9P6tiNK7cJWB8Tt4'; //API key
 const gcmURL = 'https://android.googleapis.com/gcm/send';
 
 //To check push notification support

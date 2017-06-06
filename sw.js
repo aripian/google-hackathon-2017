@@ -1,4 +1,4 @@
-var CACHE_NAME = 'sw-ex';
+var CACHE_NAME = 'axa-travel-v0.3';
 var CACHE_VERSION = 1;
 
 var filesToCache = [
@@ -6,7 +6,6 @@ var filesToCache = [
   '/index.html',
   '/css/styles.css',
   '/js/app.js',
-  '/images/yeoman.png',
   '/images/touch/chrome-touch-icon-192x192.png'
 ];
 
