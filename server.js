@@ -42,8 +42,7 @@ app.get('/payment-status', function (req, res) {
 })
 
 app.get('/price', function(req, res) {
-  res.setHeader('content-type', 'application/json')
-  res.send({
+  res.render('plans', {
     success: true,
     premium: Math.floor((Math.random() * 100) + 200),
     regular: Math.floor((Math.random() * 100) + 75)

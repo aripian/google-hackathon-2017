@@ -28,6 +28,7 @@
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
     <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
     <style amp-custom>
       <% include ../css/styles.css %>
     </style>
@@ -38,35 +39,51 @@
       layout="nodisplay">
     </amp-install-serviceworker>
     <div id="content">
+      <div  class="col-xs-12 logo">
     <amp-img src="https://digital.axa.com.my/travel-insurance-malaysia/static/assets/images/1456143263.476251.jpg?v=e069ec0da425d81da6eea23051733e3f"
             alt="AXA Logo"
             height="35.03px"
             width="177px"></amp-img>
-
-      <div class="quotation__container">
-        <div class="tag-line">Tag line Here</div>
-        <hr>
+      </div>
+      <div class="quotation__container banner col-xs-12">
+      
         <div class="quotation-form">
-          <form method="GET" action-xhr="/price" action="/" target="_top" on="submit-success:my-lightbox.close">
-            <div>
-              <label>Departure Date</label>
-              <input name="dstart" type="date">
+          <form method="GET" action="/price" target="_top" on="submit-success:my-lightbox.close">
+          <div>
+                        <div class="tag-line">
+              <div>AXA SmartTraveller</div>
+               <div>Travel Insurance You Can Count On</div>
+             </div>
+            <div class="form col-xs-12">
+
+           
+                <div class="col-xs-12 top-10">
+                <label class="tx-white">Departure Date</label>
+                 </div>
+                 <div class="col-xs-12 top-10"><input name="dstart" type="date"></div>
+                <div class="col-xs-12 top-10">
+                  <label class="tx-white">Return Date</label>
+                </div>
+                <div class="col-xs-12 top-10">
+                  <input name="dstop" type="date">
+                </div>
+                <div class="col-xs-12 top-10">
+                  <label class="tx-white">Area of Destination</label>
+                </div>
+                <div class="col-xs-12 top-10">
+                  <select name="country" id="">
+                    <option value="A1">Area 1</option>
+                    <option value="A2">Area 2</option>
+                    <option value="A3">Area 3</option>
+                  </select>
+                </div>
+              <div class="col-xs-12">
+                <button type="submit" on="tap:my-lightbox" class="btn top-10">GET QUOTE</button>
+              </div>
+              </div>
             </div>
-            <div>
-              <label>Return Date</label>
-              <input name="dstop" type="date">
-            </div>
-            <div>
-              <label>Area of Destination</label>
-              <select name="country" id="">
-                <option value="A1">Area 1</option>
-                <option value="A2">Area 2</option>
-                <option value="A3">Area 3</option>
-              </select>
-            </div>
-            <hr />
-            <button type="submit" on="tap:my-lightbox">GET QUOTE</button>
-            <div submit-success>
+            
+            <div submit-success class="col-xs-12">
               <template type="amp-mustache">
                 <amp-carousel height="200" layout="fixed-height" type="slides">
                   <div>
