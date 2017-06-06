@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>smartAppTravel</title>
+    <title>Axa Smart Traveller</title>
     <meta http-equiv=X-UA-Compatible content="IE=edge">
     <meta name=description content="A progressive webapp">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="canonical" href="https://digital.axa.com.my/travel-insurance-malaysia" />
-    <link rel="manifest" href="manifest.json">
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="shortcut icon" type="image/png" href="/images/icons/icon-48.png"/>
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="PWA">
-    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+    <link rel="icon" sizes="192x192" href="/images/icons/icon-192.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
@@ -34,10 +34,10 @@
     </style>
   </head>
   <body>
-    <amp-install-serviceworker src="/sw.js"
+    <!-- <amp-install-serviceworker src="/sw.js"
       data-iframe-src="/"
       layout="nodisplay">
-    </amp-install-serviceworker>
+    </amp-install-serviceworker> -->
     <div id="content">
       <div  class="col-xs-12 logo">
     <amp-img src="https://digital.axa.com.my/travel-insurance-malaysia/static/assets/images/1456143263.476251.jpg?v=e069ec0da425d81da6eea23051733e3f"
@@ -117,5 +117,7 @@
         </div>
       </div>
     </div>
+    <script src="../js/push.js"></script>
+    <script src="../js/app.js"></script>
   </body>
 </html>

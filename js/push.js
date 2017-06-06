@@ -2,7 +2,7 @@
 const btn = document.getElementById('turn-on-notification');
 
 //Tokens
-const apiKey = 'AIzaSyCjrU5SqotSg2ybDLK_7rMMt9Rv0dMusvY'; //API key
+const apiKey = 'AIzaSyAKlZYO0XKTsDHSUtK9P6tiNK7cJWB8Tt4'; //API key
 const gcmURL = 'https://android.googleapis.com/gcm/send';
 
 //To check push notification support
@@ -11,12 +11,10 @@ function isPushNotification(reg) {
   .then((subscription) => {
     console.log('Push Notification Status: ', subscription);
     //If already access granted, change status
-    if (subscription) {
-      changeStatus(true);
-    }
-    else {
-      changeStatus(false);
-    }
+    subscribe();
+    // else {
+    //   changeStatus(false);
+    // }
   })
   .catch((error) => {
     console.error(error);
@@ -25,6 +23,7 @@ function isPushNotification(reg) {
 
 //To subscript push notification
 function subscribe() {
+  console.log("subscribing");
   navigator.serviceWorker.ready
   .then((registration) => {
     if (!registration.pushManager) {
@@ -37,7 +36,6 @@ function subscribe() {
     })
     .then((subscription) => {
       console.log('Successfully subscribed: ', subscription);
-      changeStatus(true);
     })
     .catch((error) => {
       console.error(error);
@@ -75,33 +73,33 @@ function unsubscribe() {
 
 
 //To send push notification
-const pushBtn = document.getElementById('send-push');
-pushBtn.addEventListener('click', () => {
-  sendPushNotification();
-});
+// const pushBtn = document.getElementById('send-push');
+// pushBtn.addEventListener('click', () => {
+//   sendPushNotification();
+// });
 
 //To change status
-function changeStatus(status) {
-  btn.dataset.checked = status;
-  btn.checked = status;
-  if (status) {
-    pushBtn.style.display = 'block';
-  }
-  else {
-    pushBtn.style.display = 'none';
-  }
-}
+// function changeStatus(status) {
+//   btn.dataset.checked = status;
+//   btn.checked = status;
+//   if (status) {
+//     pushBtn.style.display = 'block';
+//   }
+//   else {
+//     pushBtn.style.display = 'none';
+//   }
+// }
 
 //Click event for subscribe btn
-btn.addEventListener('click', () => {
-  var isBtnChecked = (btn.dataset.checked === 'true');
-  if (isBtnChecked) {
-    unsubscribe();
-  }
-  else {
-    subscribe();
-  }
-});
+// btn.addEventListener('click', () => {
+//   var isBtnChecked = (btn.dataset.checked === 'true');
+//   if (isBtnChecked) {
+//     unsubscribe();
+//   }
+//   else {
+//     subscribe();
+//   }
+// });
 
 //To generate curl command to send push notification
 function curlCommand(subscription) {

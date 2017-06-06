@@ -60,8 +60,8 @@ app.post('/send_notification', function (req, res) {
   var temp = req.body.endpoint.split('/'); //End point send from client
   var regTokens = [temp[temp.length - 1]];
 
-  var sender = new gcm.Sender("AIzaSyBp9iaFALyoC3vmjD-W0_SI4_RgLjC1K84"); //API key
-
+  var sender = new gcm.Sender("AIzaSyAKlZYO0XKTsDHSUtK9P6tiNK7cJWB8Tt4"); //API key
+  console.log("this is triggered!!")
   // Now the sender can be used to send messages
   sender.send(message, { registrationTokens: regTokens }, function (error, response) {
   	if (error) {
