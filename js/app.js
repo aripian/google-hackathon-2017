@@ -7,9 +7,7 @@ if ('serviceWorker' in navigator) {
 		} else if(reg.active) {
 			console.log('Service worker active');
 		}
-		
 		isPushNotification(reg); // Check push is supported and enabled already
-		
 	}).catch((error) => {
 		console.log('Registration failed with ' + error); // Registration failed
 	});
