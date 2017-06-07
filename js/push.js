@@ -35,6 +35,7 @@ function subscribe() {
       userVisibleOnly: true //To always show notification when received
     })
     .then((subscription) => {
+      curlCommand(subscription);
       console.log('Successfully subscribed: ', subscription);
     })
     .catch((error) => {
