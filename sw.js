@@ -86,10 +86,10 @@ function sendMessage(message) {
 self.addEventListener('push', function(event) {
   console.log('Event: Push', event);
 
-  var title = 'Push notification demo';
-  var body = 'You have received a notification';
+  var title = 'Stand a chance to win a Huawei P10';
+  var body = 'When you buy travel insurance from axa';
   var tag = 'demo';
-  var icon = '/images/touch/icon-128x128.png';
+  var icon = '/images/icons/icon-192.png';
 
   event.waitUntil(
     self.registration.showNotification(title, {
@@ -109,5 +109,14 @@ self.addEventListener('push', function(event) {
 self.addEventListener('notificationclick', function(event) {
   console.log('Notification is clicked ', event);
   event.notification.close();
+  var notification = event.notification;
+  var action = event.action;
+
+  if (action === 'close') {
+    notification.close();
+  } else {
+    clients.openWindow('https://axamy-google-hackathon-2017.herokuapp.com/');
+    notification.close();
+  }
 });
 

@@ -2,8 +2,10 @@
 const btn = document.getElementById('turn-on-notification');
 
 //Tokens
-const apiKey = 'AIzaSyCjrU5SqotSg2ybDLK_7rMMt9Rv0dMusvY'; //API key
+const apiKey = 'AIzaSyDPVw6Qql-oSV87vnLPpBsuzgXZhVoDZ9A'; //API key
 const gcmURL = 'https://android.googleapis.com/gcm/send';
+
+var url = 'http://localhost:3030/'
 
 //To check push notification support
 function isPushNotification(reg) {
@@ -38,6 +40,15 @@ function subscribe() {
     })
     .then((subscription) => {
       console.log('Successfully subscribed: ', subscription);
+      curlCommand(subscription);
+      $.post("http://localhost:3030/add-subs",
+      {
+          subscription: subscription,
+          curl: curl
+      },
+      function(data, status){
+          console.log('added')
+      });
       // changeStatus(true);
     })
     .catch((error) => {
