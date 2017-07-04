@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('../sw.js', { scope: '/' }).then((reg) => {
+	navigator.serviceWorker.register('/sw.js', { scope: '/' }).then((reg) => {
 		if (reg.installing) {
 			console.log('Service worker installing');
 		} else if(reg.waiting) {
@@ -7,7 +7,9 @@ if ('serviceWorker' in navigator) {
 		} else if(reg.active) {
 			console.log('Service worker active');
 		}
+		
 		isPushNotification(reg); // Check push is supported and enabled already
+		
 	}).catch((error) => {
 		console.log('Registration failed with ' + error); // Registration failed
 	});
