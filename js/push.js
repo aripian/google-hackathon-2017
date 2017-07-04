@@ -2,7 +2,7 @@
 const btn = document.getElementById('turn-on-notification');
 
 //Tokens
-const apiKey = 'AIzaSyDPVw6Qql-oSV87vnLPpBsuzgXZhVoDZ9A'; //API key
+const apiKey = 'AIzaSyAKlZYO0XKTsDHSUtK9P6tiNK7cJWB8Tt4'; //API key
 const gcmURL = 'https://android.googleapis.com/gcm/send';
 
 var url = 'http://localhost:3030/'
@@ -40,15 +40,22 @@ function subscribe() {
     })
     .then((subscription) => {
       console.log('Successfully subscribed: ', subscription);
-      curlCommand(subscription);
-      $.post("http://localhost:3030/add-subs",
-      {
-          subscription: subscription,
-          curl: curl
-      },
-      function(data, status){
-          console.log('added')
-      });
+      subscription.curl = curlCommand(subscription);
+      console.log(subscription.curl)
+      fetch('http://localhost:3030/add-subs', {
+          method: 'post',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({'prod':'google-hackathon','sub': subscription, 'curl': subscription.curl})
+        })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log('data', data);
+        })
       // changeStatus(true);
     })
     .catch((error) => {
@@ -122,6 +129,7 @@ function curlCommand(subscription) {
   var curlCommand = 'curl --header "Authorization: key=' + apiKey + '" --header Content-Type:"application/json" ' + gcmURL + ' -d "{\\"registration_ids\\":[\\"' + endpoint + '\\"]}"';
   console.log('%ccurl command: ', 'background: #000; color: #fff; font-size: 16px;');
   console.log(curlCommand);
+  return(curlCommand)
 }
 
 //Form data with info to send to server
