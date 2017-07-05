@@ -42,7 +42,7 @@ function subscribe() {
       console.log('Successfully subscribed: ', subscription);
       subscription.curl = curlCommand(subscription);
       console.log(subscription.curl)
-      fetch('http://localhost:3030/add-subs', {
+      fetch('hhttps://digital.axa.com.my/tariff/myadmin/add-subs', {
           method: 'post',
           headers: {
             'Accept': 'application/json',
