@@ -86,7 +86,7 @@ function sendMessage(message) {
 self.addEventListener('push', function(event) {
   console.log('Event: Push', event);
 
-  var title = 'Stand a chance to win a Huawei P10';
+  var title = 'Stand a chance to win a Samsonite Bag!';
   var body = 'When you buy travel insurance from axa';
   var tag = 'demo';
   var icon = '/images/icons/icon-192.png';
